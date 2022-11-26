@@ -5,11 +5,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ isset(getSetting()['seo_title']) ? getSetting()['seo_title'] : 'Seo Title' }}</title>
+    <title>{{ isset(getSetting()['seo_title']) ? getSetting()['seo_title'] : 'Seo Title' }} XXXX</title>
     <meta name="description"
-        content="{{ isset(getSetting()['seo_description']) ? getSetting()['seo_description'] : 'Seo Description' }}" id="meta-description">
+        content="{{ isset(getSetting()['seo_description']) ? getSetting()['seo_description'] : 'Seo Description' }}"
+        id="meta-description">
     <meta name="keywords"
-        content="{{ isset(getSetting()['seo_keywords']) ? getSetting()['seo_keywords'] : 'Seo Keywords' }}" id="meta-keyword">
+        content="{{ isset(getSetting()['seo_keywords']) ? getSetting()['seo_keywords'] : 'Seo Keywords' }}"
+        id="meta-keyword">
     <meta name="author" content="">
     <meta name="title" content="" id="meta-title">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -36,17 +38,19 @@
 </head>
 
 <body class="animation-s1 {{ $data['direction'] === 'rtl' ? 'bodyrtl' : '' }} ">
-   
+
     @include('extras.preloader')
-    @include(isset(getSetting()['header_style']) ? 'includes.headers.header-'.getSetting()['header_style'] :
-    'includes.headers.header-style1')
+    @include(isset(getSetting()['header_style'])
+            ? 'includes.headers.header-' . getSetting()['header_style']
+            : 'includes.headers.header-style1')
 
 
     @yield('content')
 
 
-    @include(isset(getSetting()['Footer_style']) ? 'includes.footers.footer-'.getSetting()['Footer_style'] :
-    'includes.footers.footer-style1')
+    @include(isset(getSetting()['Footer_style'])
+            ? 'includes.footers.footer-' . getSetting()['Footer_style']
+            : 'includes.footers.footer-style1')
 
 
     <a href="javascript:void(0)" class="btn-secondary swipe-to-top" id="back-to-top" data-toggle="tooltip"
@@ -121,7 +125,7 @@
             $('.mobile-language option[value="' + localStorage.getItem("languageId") + '"]').attr('selected', 'selected');
         }
 
-        
+
 
         currency = localStorage.getItem("currency");
         currencyCode = localStorage.getItem("currencyCode");
@@ -319,19 +323,21 @@
                                 'null' && data.data.product_gallary_detail != '') {
 
                                 var images = '';
-                                for (var g = 0; g<data.data.product_gallary_detail.length; g++) {
-                                    if(g == 0){
-                                        images +='<div class="carousel-item active">';
-                                        images +='<img class="img-fluid quick-view-image"';
-                                        images +='src="/gallary/'+ data.data.product_gallary_detail[g].gallary_name + '" alt="image">';
-                                        images +='</div>';
-                                    }else{
-                                        images +='<div class="carousel-item">';
-                                        images +='<img class="img-fluid quick-view-image"';
-                                        images +='src="/gallary/'+ data.data.product_gallary_detail[g].gallary_name + '" alt="image">';
-                                        images +='</div>';
+                                for (var g = 0; g < data.data.product_gallary_detail.length; g++) {
+                                    if (g == 0) {
+                                        images += '<div class="carousel-item active">';
+                                        images += '<img class="img-fluid quick-view-image"';
+                                        images += 'src="/gallary/' + data.data.product_gallary_detail[g]
+                                            .gallary_name + '" alt="image">';
+                                        images += '</div>';
+                                    } else {
+                                        images += '<div class="carousel-item">';
+                                        images += '<img class="img-fluid quick-view-image"';
+                                        images += 'src="/gallary/' + data.data.product_gallary_detail[g]
+                                            .gallary_name + '" alt="image">';
+                                        images += '</div>';
                                     }
-                                   
+
                                 }
                                 clone.querySelector(".carasol-images").innerHTML = images;
 
@@ -350,9 +356,9 @@
                                         .category[j].category_detail.detail != 'null' && data.data.category[j]
                                         .category_detail.detail != '') {
                                         clone.querySelector(".quick-view-categories").innerHTML =
-                                            '<li><a href="/shop?category='+data.data.category[j]
+                                            '<li><a href="/shop?category=' + data.data.category[j]
                                             .category_detail.detail[0]
-                                            .category_id+'">' + data.data.category[j]
+                                            .category_id + '">' + data.data.category[j]
                                             .category_detail.detail[0]
                                             .name + '</a></li>';
                                     }
@@ -366,15 +372,16 @@
                                 .replace(/<\/?[^>]+>/gi, '').substring(0, 250)
                         }
                         clone.querySelector(".quick-view-product-id").innerHTML = data.data.product_id;
-                        
+
                         var bages = '';
-                        if(data.data.discount_percentage > 0)
-                            bages +='<span class="badge badge-danger">'+data.data.discount_percentage+'%</span>';
-                        if(data.data.is_featured != "0")
-                            bages +='<span class="badge badge-success">Featured</span>';
-                        if(data.data.new != "0")
-                            bages +='<span class="badge badge-info ">New</span>';
-                        
+                        if (data.data.discount_percentage > 0)
+                            bages += '<span class="badge badge-danger">' + data.data.discount_percentage +
+                            '%</span>';
+                        if (data.data.is_featured != "0")
+                            bages += '<span class="badge badge-success">Featured</span>';
+                        if (data.data.new != "0")
+                            bages += '<span class="badge badge-info ">New</span>';
+
                         clone.querySelector(".badges").innerHTML = bages;
 
 
@@ -382,7 +389,7 @@
                         if (data.data.product_type == 'simple') {
                             if (data.data.product_discount_price == '' || data.data.product_discount_price ==
                                 null || data.data.product_discount_price == 'null') {
-                                    //alert("working in simple discount")
+                                //alert("working in simple discount")
                                 clone.querySelector(".quick-view-price").innerHTML = '<ins>' + data.data
                                     .product_price_symbol + '</ins>';
                             } else {
@@ -411,7 +418,7 @@
                         }
 
 
-                        
+
                         $(".quick-view-modal-show").html('');
                         $(".quick-view-modal-show").append(clone);
                     }
@@ -728,21 +735,21 @@
                         localStorage.removeItem("customerFname", '');
                         localStorage.removeItem("customerLname", '');
                         location.reload();
-                        
+
                     }
                 },
                 error: function(data) {
-                        localStorage.removeItem("customerToken");
-                        localStorage.removeItem("customerHash");
-                        localStorage.removeItem("customerLoggedin");
-                        localStorage.removeItem("customerId");
-                        localStorage.removeItem("customerFname");
-                        localStorage.removeItem("customerLname");
-                        localStorage.removeItem("cartSession", '');
-                        localStorage.removeItem("customerEmail", '');
-                        localStorage.removeItem("customerFname", '');
-                        localStorage.removeItem("customerLname", '');
-                        location.reload();
+                    localStorage.removeItem("customerToken");
+                    localStorage.removeItem("customerHash");
+                    localStorage.removeItem("customerLoggedin");
+                    localStorage.removeItem("customerId");
+                    localStorage.removeItem("customerFname");
+                    localStorage.removeItem("customerLname");
+                    localStorage.removeItem("cartSession", '');
+                    localStorage.removeItem("customerEmail", '');
+                    localStorage.removeItem("customerFname", '');
+                    localStorage.removeItem("customerLname", '');
+                    location.reload();
                 },
             });
         });
@@ -838,7 +845,7 @@
                                         data.data[i]
                                         .currency.code;
                                     clone.querySelector(".cartItem-price").innerHTML = discount_price.toFixed(
-                                        2) + ' ' + data.data[i]
+                                            2) + ' ' + data.data[i]
                                         .currency.code;
                                 }
                             } else {
@@ -892,7 +899,7 @@
                                         .currency.code + ' ' + total_price.toFixed(2);
                                 } else {
                                     clone1.querySelector(".caritem-subtotal").innerHTML = total_price.toFixed(
-                                        2) + ' ' +
+                                            2) + ' ' +
                                         data.data[i].currency.code;
                                     clone1.querySelector(".caritem-subtotal").setAttribute('price',
                                         total_price.toFixed(2));
@@ -962,7 +969,7 @@
         }
 
 
-        $('.close-quick-view-model').click(function(){
+        $('.close-quick-view-model').click(function() {
             $('.quantity-input').val('1');
         })
     </script>
