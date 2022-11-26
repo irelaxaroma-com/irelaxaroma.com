@@ -1,0 +1,201 @@
+// ....order....
+
+.order-two-content{
+    margin-bottom: 30px;
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                .fas{
+                    margin-right: 10px;
+                    font-size: 16px;
+                    float: left;
+                }
+            }
+        }
+        
+    }
+  
+    .tag-color{
+        color: $secondary;
+        font-size: 20px
+    }
+    .tag-s{
+        font-size: 20px;
+    }
+
+    .media-main{
+        background-color: white;
+     
+    }
+    .table{
+        background-color: white;
+       
+        th{
+            border-top: none;
+            vertical-align: middle;
+        }
+        
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .right {
+        text-align: right;
+    }
+    .items{
+        tr{
+            th{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            td.item-detail-left{
+				justify-content:flex-start;
+			}
+            td.bold{
+                font-weight: bold;
+			}
+            td{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .order-img{
+                    border:$border-width solid $gray-400;
+                }
+                .text-body{
+                    h4{
+                        font-size: 1rem;
+                    font-weight: 600;
+                    }
+                    
+                }
+                .qtypluscart{
+                    display: grid;
+                    a{
+                        display: grid;
+                    }
+                    .fas{
+                        border:  $border-width solid $gray-400;
+                        padding: 2px 4px;
+                        font-size: 9px;
+                    }
+                }
+                
+                .input-group{
+                    display: flex;
+                  justify-content: center;
+                  width: 50%;
+                  .form-control{
+                        width: 50%;
+                        text-align : center;
+                    }    
+                }
+            }
+            
+        }
+    }
+    .order-id{
+        tbody{
+            tr{
+                .pending{
+                    p{
+                        background-color: $primary;
+                        color: white;
+                        margin: 0;
+                        padding: 0 5px;
+                        width: 80px;
+                        text-align: center;
+                    
+                    }
+                   
+                }
+                .address{
+                    text-align: left;
+                  
+                }
+                td{
+                    border-top: none;
+                    font-size: 13px;
+                    padding: 5px 10px 5px 10px !important;
+                 
+                }
+            }
+        }
+    }
+    .comments-area{
+        background-color: $white;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.media {
+    width: 205px;
+}
+
+.font-weight-n {
+    font-weight: normal;
+}
+
+.font-size-h3 {
+    font-size: 1.8rem !important;
+}
+
+.badge-primary {
+    background-color: #1E30CA ;
+    color: #fff;
+}
+
+.badge {
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding: 0.25em 0.4em 0.18rem 0.35rem;
+    border-radius: 2rem;
+}
+
+.font-size-h5 {
+    font-size: 1rem !important;
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+}
+
+.text-input {
+    width: calc(100% - 205px);
+}
+
+.disabled::before {
+    content: "";
+    background-color: #e9ecef;
+}
+
+.text-input::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #e9ecef;
+    position: absolute;
+    left: -7px;
+    bottom: 50%;
+    top: 44%;
+    border: solid #ced4da;
+    border-width: 0 1px 1px 0;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.text-input .date-text {
+    margin-top: -15px;
+}
+
+.text-black-50 {
+    color: #687179 !important;
+    font-weight: normal;
+}
+
+.fixed-size {
+    resize: none;
+}
+
+              
